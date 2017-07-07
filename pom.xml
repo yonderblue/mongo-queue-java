@@ -4,7 +4,7 @@
 
     <groupId>gaillard</groupId>
     <artifactId>mongo-queue-java</artifactId>
-    <version>1.0.0</version>
+    <version>3.0.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,7 +20,7 @@
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
-            <version>2.11.2</version>
+            <version>3.4.2</version>
         </dependency>
     </dependencies>
 

@@ -4,6 +4,8 @@
 Java message queue using MongoDB as a backend
 Adheres to the 1.0.0 [specification](https://github.com/dominionenterprises/mongo-queue-specification).
 
+###This is a forked version from https://github.com/gaillard/mongo-queue-java Compatible with mongo-java-driver 3.
+
 ##Features
 
  * Message selection and/or count via MongoDB query
@@ -18,17 +20,17 @@ Adheres to the 1.0.0 [specification](https://github.com/dominionenterprises/mong
 ##Simplest use
 
 ```java
-import com.mongodb.BasicDBObject;
+import java.net.UnknownHostException;
+import org.bson.Document;
 import com.mongodb.MongoClient;
 import gaillard.mongo.Queue;
-import java.net.UnknownHostException;
 
 public final class Main {
 
     public static void main(final String[] args) throws UnknownHostException {
-        final Queue queue = new Queue(new MongoClient().getDB("testing").getCollection("messages"));
-        queue.send(new BasicDBObject());
-        final BasicDBObject message = queue.get(new BasicDBObject(), 60);
+        final Queue queue = new Queue(new MongoClient().getDatabase("testing").getCollection("messages"));
+        queue.send(new Document());
+        final Document message = queue.get(new Document(), 60);
         queue.ack(message);
     }
 }
@@ -36,7 +38,7 @@ public final class Main {
 
 ##Jar
 
-To add the library as a jar simply [Build](#project-build) the project and use the `mongo-queue-java-1.0.0.jar` from the created
+To add the library as a jar simply [Build](#project-build) the project and use the `mongo-queue-java-3.0.0.jar` from the created
 `target` directory!
 
 ##Maven (TODO: Add project to Sonar OSS repo)
@@ -49,7 +51,7 @@ to your project's `pom.xml` file such as:
 <dependency>
     <groupId>gaillard</groupId>
     <artifactId>mongo-queue-java</artifactId>
-    <version>1.0.0</version>
+    <version>3.0.0</version>
 </dependency>
 ...
 ```
