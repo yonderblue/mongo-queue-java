@@ -4,6 +4,8 @@
 Java message queue using MongoDB as a backend
 Adheres to the 1.0.0 [specification](https://github.com/dominionenterprises/mongo-queue-specification).
 
+###This a forked version from https://github.com/gaillard/mongo-queue-java Compatible with mongo-java-driver 3.
+
 ##Features
 
  * Message selection and/or count via MongoDB query
